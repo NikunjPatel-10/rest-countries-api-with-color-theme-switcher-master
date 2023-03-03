@@ -1,0 +1,14 @@
+.main-bg-color {
+  background-color: $main-bg-color;
+}
+
+.image-wrapper {
+  height: 180px;
+  width: 290px;
+  overflow: hidden;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}

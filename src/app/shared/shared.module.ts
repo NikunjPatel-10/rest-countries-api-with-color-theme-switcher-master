@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchPipe } from './search.pipe';
 import { FilterPipe } from './filter.pipe';
+import { ThemeService } from './service/theme.service';
 
 
 
@@ -12,6 +13,8 @@ import { FilterPipe } from './filter.pipe';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  providers:[ThemeService],
+  exports:[SearchPipe]
 })
 export class SharedModule { }

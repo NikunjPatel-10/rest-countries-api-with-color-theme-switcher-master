@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GetCountriesService } from '../../core/service/get-countries.service';
+import { GetCountriesService } from '../service/get-countries.service';
 
 @Component({
   selector: 'app-country-list-container',
@@ -9,6 +9,7 @@ import { GetCountriesService } from '../../core/service/get-countries.service';
 })
 export class CountryListContainerComponent implements OnInit {
   public countryList$: Observable<any>
+  public data:any
   constructor(private _countryApiService: GetCountriesService) {
     this.countryList$ = new Observable()
   }
@@ -19,9 +20,22 @@ export class CountryListContainerComponent implements OnInit {
  */
     this.countryList$ = this._countryApiService.getCountryList()
     console.log(this.countryList$);
+
+    this.getCountryRegion()
+   
   }
 
 
+  public getCountryRegion(){
+this._countryApiService.getCountryRegion().subscribe((res)=>{
+  if(res){
+    console.log(res);
+  }else{
+    console.log("server error");
+    
+  }
+})
+  }
 
 
 }

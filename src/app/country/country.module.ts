@@ -5,19 +5,22 @@ import { CountryRoutingModule } from './country-routing.module';
 import { CountryComponent } from './country.component';
 import { CountryListContainerComponent } from './country-list-container/country-list-container.component';
 import { CountryListPresentationComponent } from './country-list-container/country-list-presentation/country-list-presentation.component';
-import { GetCountriesService } from '../core/service/get-countries.service';
+import { GetCountriesService } from './service/get-countries.service';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     CountryComponent,
     CountryListContainerComponent,
-    CountryListPresentationComponent,
-    
+    CountryListPresentationComponent, 
   ],
   imports: [
     CommonModule,
-    CountryRoutingModule
+    CountryRoutingModule,
+    FormsModule,
+    SharedModule
   ],
   providers:[
     GetCountriesService]

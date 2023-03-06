@@ -1,5 +1,14 @@
 // Card styles goes here
-.card-img{
-    height: 200px;
-object-fit: cover;
+.card{
+    
+    .card-img{
+        height: 150px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+        img {
+          height: auto;
+          width: 100%;
+        }
+      
 }

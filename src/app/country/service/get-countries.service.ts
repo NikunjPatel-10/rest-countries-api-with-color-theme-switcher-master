@@ -4,15 +4,21 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class GetCountriesService {
-public apiUrl:string
+public apiUrl:string;
+public regionName:string
   constructor(private _http:HttpClient) { 
-    this.apiUrl = 'https://restcountries.com/v2/'
+    this.apiUrl = 'https://restcountries.com/',
+    this.regionName = ''
   }
 
   public getCountryList():Observable<any>{
-    const url = this.apiUrl + "all"
+    const url = this.apiUrl + 'v3.1/' + 'all'
     return this._http.get<any>(url)
   }
 
+  public getCountryRegion():Observable<any>{
+    const url = this.apiUrl 
+    return this._http.get<any>(`${this.apiUrl}/v3.1/region`)
+  }
   
 }

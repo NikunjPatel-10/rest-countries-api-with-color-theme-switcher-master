@@ -1,36 +1,34 @@
 <div class="h-100 main-bg-color p-5">
     <div class="d-flex justify-content-between ">
         <div class="d-flex bg-white p-2 shadow">
-            <span class="bi bi-search fs-4"></span>
-            <input type="text" class="form-control border-0 shadow-none " placeholder="search" aria-label="Username"
-                aria-describedby="basic-addon1">
+           <label for="search"> <span class="bi bi-search fs-4"></span> </label>
+            <input type="text" class="form-control border-0 shadow-none "  id="search" placeholder="search" aria-label="Username"
+                aria-describedby="basic-addon1" [(ngModel)]="searchData">
         </div>
         <div>
-            <select class="form-select form-select-lg bg-white border-0 shadow">
-                <option>Filter By region</option>
-                <option>Filter By region</option>
-                <option>Filter By region</option>
+            <select class="form-select form-select-lg bg-white border-0 shadow" (change)="getRegion($event)"  >
+             <option>Filter By Region</option>
+                <option *ngFor="let data of region">{{data}}</option>
             </select>
         </div>
     </div>
-
-    <div class=" d-inline-block me-4 mt-5" *ngFor="let data of countryList">
-        <div class="card shadow ">
-            <div>
-                <figure class="card-img ">
+    <!-- show data in card veiw -->
+    <div class="row">
+        <div class=" mt-5 col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 " *ngFor="let data of countryListData | search : searchData  "  >
+            <div class=" card shadow">
+                <figure class="card-img">
                     <img [src]="data.flags.png" alt="flag">
                 </figure>
                 <div class="card-body">
-                    <h5 class="card-title"><span></span>
-                        <span>{{data.name}}</span>
+                    <h5 class="card-title">
+                        <span>{{data.name.common}}</span>
                     </h5>
                     <div class="card-text"><span>Population :</span> <span>{{data.population}}</span></div>
                     <div class="card-text"><span>Region : </span><span>{{data.region}}</span></div>
                     <div class="card-text"><span>Capital : </span><span>{{data.capital}}</span></div>
-
                 </div>
+
             </div>
         </div>
     </div>
-
 </div>

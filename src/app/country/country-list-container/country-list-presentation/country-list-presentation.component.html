@@ -14,17 +14,19 @@
         </div>
     </div>
 
-    <div class=" d-inline-block me-4 mt-5"  *ngFor="let data of countryList"> 
-        <div class="card shadow " >
+    <div class=" d-inline-block me-4 mt-5" *ngFor="let data of countryList">
+        <div class="card shadow ">
             <div>
                 <figure class="card-img ">
-                    <img [src]="data.flags.png"  alt="flag" >
+                    <img [src]="data.flags.png" alt="flag">
                 </figure>
                 <div class="card-body">
-                    <h5 class="card-title">{{data.name}}</h5>
-                    <p class="card-text">Population : {{data.population}}</p>
-                    <p class="card-text">Region : {{data.region}}</p>
-                    <p class="card-text">Capital : {{data.capital}}</p>
+                    <h5 class="card-title"><span></span>
+                        <span>{{data.name}}</span>
+                    </h5>
+                    <div class="card-text"><span>Population :</span> <span>{{data.population}}</span></div>
+                    <div class="card-text"><span>Region : </span><span>{{data.region}}</span></div>
+                    <div class="card-text"><span>Capital : </span><span>{{data.capital}}</span></div>
 
                 </div>
             </div>

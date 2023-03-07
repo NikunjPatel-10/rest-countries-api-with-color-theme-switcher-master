@@ -13,7 +13,7 @@
         </div>
     </div>
     <!-- show data in card veiw -->
-    <div class="container"  infinite-scroll [infiniteScrollDistance]="distance" [infiniteScrollThrottle]="0" [scrollWindow]="false" (scrolled)="onScrollList()">
+    <div class=""  infinite-scroll [infiniteScrollDistance]="distance" [infiniteScrollThrottle]="0" [scrollWindow]="false" (scrolled)="onScrollList()">
         <div class="row ">
             <div class=" mt-5 col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 "
                 *ngFor="let data of countryListData | search : searchData  ">

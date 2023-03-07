@@ -11,11 +11,12 @@ public regionName:string
     this.regionName = ''
   }
 
-  public getCountryList():Observable<any>{
+  public getCountryList(pageNumber:number , pageSize:number):Observable<any>{
     const url = this.apiUrl + 'v3.1/' + 'all'
-    return this._http.get<any>(url)
+    return this._http.get<any>(`${url}?_page=${pageNumber}&_limit=${pageSize}`)
   }
 
+  
   public getCountryRegion():Observable<any>{
     const url = this.apiUrl 
     return this._http.get<any>(`${this.apiUrl}/v3.1/region`)

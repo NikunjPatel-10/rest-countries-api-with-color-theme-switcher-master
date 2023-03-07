@@ -10,6 +10,8 @@ import { GetCountriesService } from '../service/get-countries.service';
 export class CountryListContainerComponent implements OnInit {
   public countryList$: Observable<any>
   public data:any
+  public pageNumber = 40;
+  public pageSize = 1
   constructor(private _countryApiService: GetCountriesService) {
     this.countryList$ = new Observable()
   }
@@ -18,24 +20,23 @@ export class CountryListContainerComponent implements OnInit {
     /**
  * get the country list from the given api
  */
-    this.countryList$ = this._countryApiService.getCountryList()
+    this.countryList$ = this._countryApiService.getCountryList(this.pageNumber,this.pageSize)
     console.log(this.countryList$);
-
-    this.getCountryRegion()
+    // this.getCountryRegion()
    
   }
 
 
-  public getCountryRegion(){
-this._countryApiService.getCountryRegion().subscribe((res)=>{
-  if(res){
-    console.log(res);
-  }else{
-    console.log("server error");
+//   public getCountryRegion(){
+// this._countryApiService.getCountryRegion().subscribe((res)=>{
+//   if(res){
+//     console.log(res);
+//   }else{
+//     console.log("server error");
     
-  }
-})
-  }
+//   }
+// })
+//   }
 
 
 }

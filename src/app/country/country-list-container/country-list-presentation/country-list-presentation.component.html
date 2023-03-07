@@ -1,11 +1,11 @@
-<div class="h-100 main-bg-color p-5">
-    <div class="d-flex justify-content-between ">
+<div class=" p-5" >
+    <div class="d-flex justify-content-between list-mobile">
         <div class="d-flex bg-white p-2 shadow">
            <label for="search"> <span class="bi bi-search fs-4"></span> </label>
             <input type="text" class="form-control border-0 shadow-none "  id="search" placeholder="search" aria-label="Username"
                 aria-describedby="basic-addon1" [(ngModel)]="searchData">
         </div>
-        <div>
+        <div class="mt-2">
             <select class="form-select form-select-lg bg-white border-0 shadow" (change)="getRegion($event)"  >
              <option>Filter By Region</option>
                 <option *ngFor="let data of region">{{data}}</option>
@@ -13,7 +13,7 @@
         </div>
     </div>
     <!-- show data in card veiw -->
-    <div class="row">
+    <div class="row ">
         <div class=" mt-5 col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 " *ngFor="let data of countryListData | search : searchData  "  >
             <div class=" card shadow">
                 <figure class="card-img">

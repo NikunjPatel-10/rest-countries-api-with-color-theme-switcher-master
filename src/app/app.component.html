@@ -1,8 +1,10 @@
-<div class="h-100 d-flex flex-column" [ngClass]="theme?'bg-dark text-white':'bg-white text-white'">
-    <div>
-        <app-header></app-header>
-    </div>
-    <div class="flex-grow-1">
-        <router-outlet></router-outlet>
+<div class=" " [ngClass]="theme? 'bg-dark ':'bg-white '">
+    <div class="d-flex flex-column " >
+        <div>
+            <app-header></app-header>
+        </div>
+        <div class="flex-grow-1 ">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

@@ -13,7 +13,19 @@ export class SearchPipe implements PipeTransform {
     args = args.toUpperCase()
 
     return value.filter((data:any)=>{
-      return JSON.stringify(data).toUpperCase().includes(args)
+      // let cap;
+      // cap=data.capital
+      // // console.log(cap[0]);
+      // let b = cap[0]
+      // // console.log(b);
+      
+
+      return (
+        JSON.stringify(data.name.common).toUpperCase().includes(args) || 
+             JSON.stringify(data.population).toUpperCase().includes(args) || 
+             JSON.stringify(data.region).toUpperCase().includes(args) 
+            // || JSON.stringify((data.capital[0]).toUpperCase().includes(args))
+             );
     })
   }
 

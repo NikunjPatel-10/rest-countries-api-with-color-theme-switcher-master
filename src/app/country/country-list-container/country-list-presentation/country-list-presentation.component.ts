@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ThemeService } from 'src/app/shared/service/theme.service';
 import { CountryListPresenterService } from '../country-list-presenter/country-list-presenter.service';
 
 @Component({
@@ -32,12 +33,12 @@ export class CountryListPresentationComponent implements OnInit {
   public searchData!: string
   public filterData:any
   public region!: any[]
-
+public theme:any
   /**
    * 
    * @param _countryListPresenterService 
    */
-  constructor(private _countryListPresenterService: CountryListPresenterService) {
+  constructor(private _countryListPresenterService: CountryListPresenterService, private _themeService:ThemeService) {
     this.countryRegion = new EventEmitter()
     this.region = ['Africa', 'Americas', 'Europe', 'Asia', 'Antarctic', 'Oceania', 'All']
 
@@ -52,6 +53,7 @@ export class CountryListPresentationComponent implements OnInit {
       this.countryListData = data
       console.log(this.countryListData);  
     })
+
   }
 
 /**

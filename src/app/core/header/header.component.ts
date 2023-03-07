@@ -7,13 +7,16 @@ import { ThemeService } from 'src/app/shared/service/theme.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-isDarkMode:boolean
-  constructor(private themeService:ThemeService){
-this.isDarkMode = false
+  isDarkMode: boolean
+  constructor(private themeService: ThemeService) {
+    this.isDarkMode = false
   }
-  
-  changeTheme(){
 
-this.themeService.themeChange.next(this.isDarkMode)
+  changeTheme() {
+   this.isDarkMode = !this.isDarkMode;
+
+  //  console.log(this.isDarkMode);
+   
+   this.themeService.themeChange.next(this.isDarkMode)  
   }
 }

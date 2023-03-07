@@ -1,5 +1,7 @@
-.main-bg-color {
-  background-color: $main-bg-color;
+@media(max-width:576px){
+  .list-mobile{
+    display: flex;
+    flex-direction: column;
+  }
 }
-
 

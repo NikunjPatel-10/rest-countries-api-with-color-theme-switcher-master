@@ -20,7 +20,7 @@ export class CountryListPresentationComponent implements OnInit {
       this._countryData = res
       this.countryListData = res
       console.log(this._countryData);
-      console.log(this._countryData);
+      console.log(this.countryListData);
     }
 
   }
@@ -49,6 +49,9 @@ export class CountryListPresentationComponent implements OnInit {
 
   ngOnInit(): void {
 
+    
+    this.onScrollList()
+
     /**
      * get data from the presenter service
      */
@@ -56,8 +59,7 @@ export class CountryListPresentationComponent implements OnInit {
       this.countryListData = data
       console.log(this.countryListData);
     })
-console.log(this.pageSize);
-this.onScrollList()
+    // console.log(this.pageSize);
   }
 
   /**
@@ -74,15 +76,15 @@ this.onScrollList()
       this._countryListPresenterService.filterRegion(filter, this._countryData)
     }
   }
-
+  
   /**
    * show list on scroll
-   */
-  public onScrollList() {
-    this.pageSize++
-    console.log(this.pageSize);
-    this._countryData
-    console.log(this._countryData);
+  */
+ public onScrollList() {
+   this.pageSize++
+   console.log(this.pageSize);
+   this._countryData
+   console.log(this._countryData)
     
   }
 }

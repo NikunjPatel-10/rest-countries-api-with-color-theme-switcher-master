@@ -8,22 +8,22 @@ import { CountryListPresentationComponent } from './country-list-container/count
 import { GetCountriesService } from './service/get-countries.service';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-import {InfiniteScrollModule} from 'ngx-infinite-scroll'
+import { InfiniteScrollModule } from 'ngx-infinite-scroll'
 
 @NgModule({
   declarations: [
     CountryComponent,
     CountryListContainerComponent,
-    CountryListPresentationComponent, 
+    CountryListPresentationComponent,
   ],
   imports: [
     CommonModule,
     CountryRoutingModule,
     FormsModule,
     SharedModule,
-  InfiniteScrollModule
-  
+    InfiniteScrollModule
+
   ],
-  providers:[GetCountriesService]
+  providers: [GetCountriesService]
 })
 export class CountryModule { }
